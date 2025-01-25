@@ -25,3 +25,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::prefix('/')
     ->middleware('auth')
     ->group(function () {});
+
+
+Route::resource('users', App\Http\Controllers\UserController::class);
+
+Route::resource('knjigas', App\Http\Controllers\KnjigaController::class);
+
+Route::resource('rezervacijas', App\Http\Controllers\RezervacijaController::class);
+
+Route::resource('admins', App\Http\Controllers\AdminController::class);

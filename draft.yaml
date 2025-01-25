@@ -1,0 +1,9 @@
+controllers:
+  User:
+    resource
+  Knjiga:
+    resource
+  Rezervacija:
+    resource
+  Admin:
+    resource

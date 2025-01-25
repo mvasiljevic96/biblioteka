@@ -1,0 +1,35 @@
+created:
+    - app/Http/Controllers/UserController.php
+    - app/Http/Controllers/KnjigaController.php
+    - app/Http/Controllers/RezervacijaController.php
+    - app/Http/Controllers/AdminController.php
+    - tests/Feature/Http/Controllers/UserControllerTest.php
+    - tests/Feature/Http/Controllers/KnjigaControllerTest.php
+    - tests/Feature/Http/Controllers/RezervacijaControllerTest.php
+    - tests/Feature/Http/Controllers/AdminControllerTest.php
+    - app/Http/Requests/UserStoreRequest.php
+    - app/Http/Requests/UserUpdateRequest.php
+    - app/Http/Requests/KnjigaStoreRequest.php
+    - app/Http/Requests/KnjigaUpdateRequest.php
+    - app/Http/Requests/RezervacijaStoreRequest.php
+    - app/Http/Requests/RezervacijaUpdateRequest.php
+    - app/Http/Requests/AdminStoreRequest.php
+    - app/Http/Requests/AdminUpdateRequest.php
+    - resources/views/user/index.blade.php
+    - resources/views/user/create.blade.php
+    - resources/views/user/show.blade.php
+    - resources/views/user/edit.blade.php
+    - resources/views/knjiga/index.blade.php
+    - resources/views/knjiga/create.blade.php
+    - resources/views/knjiga/show.blade.php
+    - resources/views/knjiga/edit.blade.php
+    - resources/views/rezervacija/index.blade.php
+    - resources/views/rezervacija/create.blade.php
+    - resources/views/rezervacija/show.blade.php
+    - resources/views/rezervacija/edit.blade.php
+    - resources/views/admin/index.blade.php
+    - resources/views/admin/create.blade.php
+    - resources/views/admin/show.blade.php
+    - resources/views/admin/edit.blade.php
+updated:
+    - routes/web.php

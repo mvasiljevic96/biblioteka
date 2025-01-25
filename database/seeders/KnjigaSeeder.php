@@ -76,7 +76,7 @@ class KnjigaSeeder extends Seeder
         ]);
         
         Knjiga::create([
-            'naziv' => 'Gospodar prstenova: Družina prstena',
+            'naziv' => 'Gospodar prstenova',
             'autor' => 'J.R.R. Tolkien',
             'opis' => 'Prvi deo epske fantastične trilogije o borbi dobra i zla u zemlji Srednje zemlje.',
             'status' => 'dostupna',
