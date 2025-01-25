@@ -5,9 +5,10 @@
     
     
     <div class="alert alert-info text-center">
-        <h4>Dragi {{ Auth::user()->ime }}, dobrodošli na našu biblioteku!</h4>
+        <h4>Dragi <span style='font-weight: bold; font-size: 1.2em;'>{{ Auth::user()->ime }}</span>, dobrodošli na našu biblioteku!</h4>
         <p>Ovde možete pregledati sve dostupne knjige i rezervisati ih.</p>
     </div>
+    
     
     <table class="table table-bordered table-striped shadow-lg">
         <thead class="table-primary text-center">

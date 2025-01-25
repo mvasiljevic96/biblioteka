@@ -32,7 +32,7 @@
 
             @if ($knjiga->status === 'dostupna')
                 <tr>
-                    <td><strong>Datum od:</strong></td>
+                    <td><strong>Datum</strong></td>
                     <td>
                         <form action="{{ route('rezervacijas.store') }}" method="POST" class="d-inline">
                             @csrf
