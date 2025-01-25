@@ -24,7 +24,8 @@ class User extends Authenticatable
 
     public function rezervacijas()
     {
-        return $this->hasMany(Rezervacija::class);
+        //return $this->hasMany(Rezervacija::class);
+        return $this->hasMany(\App\Models\Rezervacija::class, 'user_id');
     }
 
     public function isSuperAdmin(): bool

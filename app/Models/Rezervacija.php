@@ -34,6 +34,7 @@ class Rezervacija extends Model
 
     public function knjiga()
     {
-        return $this->belongsTo(Knjiga::class);
+        //return $this->belongsTo(Knjiga::class);
+        return $this->belongsTo(\App\Models\Knjiga::class, 'knjiga_id');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Knjiga;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $knjige = Knjiga::all();
+
+        return view('home', compact('knjige'));
     }
 }

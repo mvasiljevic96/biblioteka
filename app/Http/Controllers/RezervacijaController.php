@@ -2,65 +2,62 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RezervacijaStoreRequest;
-use App\Http\Requests\RezervacijaUpdateRequest;
+
 use App\Models\Rezervacija;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Knjiga;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
+
 
 class RezervacijaController extends Controller
 {
-    public function index(Request $request): Response
-    {
-        $rezervacijas = Rezervacija::all();
+ 
 
-        return view('rezervacija.index', [
-            'rezervacijas' => $rezervacijas,
+    public function store(Request $request)
+    { 
+        
+        $request->validate([
+            'knjiga_id' => 'required|exists:knjigas,id'
         ]);
-    }
-
-    public function create(Request $request): Response
-    {
-        return view('rezervacija.create');
-    }
-
-    public function store(RezervacijaStoreRequest $request): Response
-    {
-        $rezervacija = Rezervacija::create($request->validated());
-
-        $request->session()->flash('rezervacija.id', $rezervacija->id);
-
-        return redirect()->route('rezervacijas.index');
-    }
-
-    public function show(Request $request, Rezervacija $rezervacija): Response
-    {
-        return view('rezervacija.show', [
-            'rezervacija' => $rezervacija,
+    
+        $knjiga = Knjiga::findOrFail($request->knjiga_id);
+        if ($knjiga->status !== 'dostupna') {
+            return redirect()->back()->with('error', 'Knjiga je već rezervisana.');
+        }
+    
+        Rezervacija::create([
+            'rezervisana_od' => $request->rezervisana_od,
+            'rezervisana_do' => $request->rezervisana_do,
+            'user_id' => auth()->id(),
+            'knjiga_id' => $knjiga->id,
         ]);
+    
+       
+        $knjiga->update(['status' => 'rezervisana']);
+    
+        return redirect()->route('home')->with('success', 'Knjiga je uspešno rezervisana.');
     }
 
-    public function edit(Request $request, Rezervacija $rezervacija): Response
+
+
+
+
+    public function destroy(Request $request, Rezervacija $rezervacija)
     {
-        return view('rezervacija.edit', [
-            'rezervacija' => $rezervacija,
-        ]);
-    }
+                
+        $knjiga = $rezervacija->knjiga;
 
-    public function update(RezervacijaUpdateRequest $request, Rezervacija $rezervacija): Response
-    {
-        $rezervacija->update($request->validated());
+                 
+        if($knjiga)
+        {
+            $knjiga->update(['status' => 'dostupna']);
+        }
 
-        $request->session()->flash('rezervacija.id', $rezervacija->id);
-
-        return redirect()->route('rezervacijas.index');
-    }
-
-    public function destroy(Request $request, Rezervacija $rezervacija): Response
-    {
         $rezervacija->delete();
 
-        return redirect()->route('rezervacijas.index');
+               
+
+        return redirect()->route('users.index')->with('success', 'Rezervacija je poništena.');
+
+                    
     }
 }
