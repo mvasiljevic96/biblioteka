@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('naziv');
             $table->string('autor');
             $table->text('opis');
-            $table->enum('status')->default('dostupna');
+            $table->enum('status', ['dostupna', 'rezervisana'])->default('dostupna');
         });
     }
 

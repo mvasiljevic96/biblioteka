@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('prezime');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('tip')->default('korisnik');
+            $table->enum('tip',['korisnik', 'bibliotekar'])->default('korisnik');
 
             $table->timestamps();
         });
