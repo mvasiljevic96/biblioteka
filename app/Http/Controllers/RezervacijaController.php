@@ -37,6 +37,13 @@ class RezervacijaController extends Controller
         return redirect()->route('home')->with('success', 'Knjiga je uspešno rezervisana.');
     }
 
+    public function create()
+    {
+        
+    
+        return view('rezervacija.create'); 
+    }
+
 
 
 

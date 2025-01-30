@@ -33,16 +33,7 @@
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label for="status" class="form-label">Status</label>
-            <select name="status" id="status" class="form-select @error('status') is-invalid @enderror" required>
-                <option value="dostupna" {{ old('status') == 'dostupna' ? 'selected' : '' }}>Dostupna</option>
-                <option value="rezervisana" {{ old('status') == 'rezervisana' ? 'selected' : '' }}>Rezervisana</option>
-            </select>
-            @error('status')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+       <input type="hidden" name="status" value="dostupna">
 
         <button type="submit" class="btn btn-primary">Sačuvaj knjigu</button>
     </form>

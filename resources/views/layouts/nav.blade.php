@@ -31,16 +31,16 @@
                     
                     <!-- Dugme Admin panel -->
                     @if(Auth::check() && Auth::user()->tip === 'bibliotekar')
-                        <li class="nav-item">
-                            <a class="nav-link text-primary" href="{{ route('admins.index') }}">
-                                <i class="ion-md-settings"></i> Upravljaj korisnicima
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-primary" href="{{ route('knjigas.create') }}">
-                                <i class="ion-md-settings"></i> Dodaj knjigu
-                            </a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="{{ route('admins.index') }}">
+                            <i class="ion-md-settings"></i> Lista korisnika
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="{{ route('knjigas.create') }}">
+                            <i class="ion-md-book"></i> Dodaj knjigu
+                        </a>
+                    </li>
                     @endif
                     
                 @endauth

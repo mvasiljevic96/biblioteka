@@ -32,7 +32,7 @@ class AdminController extends Controller
             'ime' => 'required|string|max:255',
             'prezime' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . $korisnik->id,
-            'tip' => 'required|in:korisnik,admin,bibliotekar', 
+            //'tip' => 'required|in:korisnik,bibliotekar', 
         ]);
     
         

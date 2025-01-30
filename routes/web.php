@@ -36,8 +36,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('admins', App\Http\Controllers\AdminController::class);
 
-Route::get('users/knjige', [App\Http\Controllers\UserController::class, 'knjige']);
-
 Route::resource('users', App\Http\Controllers\UserController::class);
 
 Route::resource('knjigas', App\Http\Controllers\KnjigaController::class);

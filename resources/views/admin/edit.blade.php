@@ -41,7 +41,7 @@
             <label for="tip" class="form-label">Tip korisnika</label>
             <select name="tip" id="tip" class="form-select" required>
                 <option value="korisnik" {{ $korisnik->tip == 'korisnik' ? 'selected' : '' }}>Korisnik</option>
-                <option value="admin" {{ $korisnik->tip == 'admin' ? 'selected' : '' }}>Administrator</option>
+                <option value="bibliotekar" {{ $korisnik->tip == 'bibliotekar' ? 'selected' : '' }}>Administrator</option>
             </select>
         </div>
 

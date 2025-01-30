@@ -35,6 +35,7 @@
                     </td>
                     <td class="text-center">
                         <a href="{{ route('knjigas.show', $knjiga->id) }}" class="btn btn-info btn-sm">Detaljnije</a>
+                        
                     </td>
                 </tr>
             @empty

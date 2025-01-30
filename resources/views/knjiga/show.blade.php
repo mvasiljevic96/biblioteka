@@ -46,6 +46,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary mt-3 w-100">Rezerviši</button>
+                           
                         </form>
                     </td>
                 </tr>
@@ -57,6 +58,7 @@
 
     <div class="mt-4 text-center">
         <a href="{{ route('home') }}" class="btn btn-secondary">Nazad na listu</a>
+       
     </div>
 </div>
 @endsection

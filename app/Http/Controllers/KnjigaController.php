@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class KnjigaController extends Controller
 {
-
+  
     public function create()
     {
         return view('knjiga.create');

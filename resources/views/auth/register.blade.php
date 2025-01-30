@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6"> <!-- Sužavanje širine forme -->
+        <div class="col-md-4"> <!-- Sužavanje širine forme -->
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white text-center font-weight-bold">
                     {{ __('Registracija') }}
